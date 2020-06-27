@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<title>{{ title or site.title or site.name }}</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type"   content="text/html; charset=utf-8" />
+<meta name="description" content="{{ site.description }}">
+<meta name="author" content="Mauricio Villalobos">
+
+{# Open graph related #}
+<meta property="og:title" content="{{ title or site.title }}" />
+<meta property="og:type" content="{{ type or site.type }}" />
+<meta property="og:url" content="{{ url or site.url }}" />
+<meta property="og:image" content="{{ image or site.image }}" />
+<meta property="og:site_name" content="{{ name or site.name }}" />
+<meta property="og:description" content="{{ description or site.description }}" />
+
+{% include "webpack.njk" %}

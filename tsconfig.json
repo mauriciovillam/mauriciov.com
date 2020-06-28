@@ -6,6 +6,7 @@
       "target": "es5",
       "jsx": "react",
       "allowJs": true,
-      "sourceMap": true
+      "sourceMap": true,
+      "typeRoots": [ "./src/types", "./node_modules/@types"]
     }
 }

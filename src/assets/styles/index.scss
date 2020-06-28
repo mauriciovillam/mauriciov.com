@@ -12,5 +12,26 @@ a {
   text-decoration: unset !important;
 }
 
+.section {
+  position:relative;
+  width:100%;
+  height:auto;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 2px rgba(255,255,255,0.3); 
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 7px;
+  -webkit-box-shadow: inset 0 0 2px rgba(255,255,255,0.5); 
+}
+
 @import 'reset';
-@import 'spectacle';
+@import 'main';
+@import 'contact';

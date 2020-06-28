@@ -1,0 +1,31 @@
+.contact.section {
+    background-color: #2f0006;
+    display:flex;
+
+    .column {
+        padding:80px;
+        padding-left:140px;
+        width:50%;
+        max-width: 50%;
+    }
+
+    h1 {
+        font-family: 'Merriweather', sans-serif;
+        font-size:110px;
+        text-shadow: 3px 2px 0 black;
+        color: #d74e1d;
+    }
+
+    p {
+        margin-top:2rem;
+        font-family: 'Roboto', sans-serif;
+        color:rgb(221, 221, 221);
+        font-size:24px;
+        max-width:600px;
+
+        strong {
+            font-size:28px;
+            font-weight: 500;
+        }
+    }
+}

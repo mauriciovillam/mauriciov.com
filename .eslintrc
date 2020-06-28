@@ -1,0 +1,7 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "no-console": "off"
+  }
+}

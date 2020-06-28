@@ -1,26 +1,8 @@
-.spectacle.section {
+#spectacle {
     width:100%;
     height:100vh;
     position: relative;
-
-    background: url('/assets/images/spectacle/background.jpg');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-
-    .soldier {
-        width:48px;
-        height:48px;
-        background: url('/assets/images/spectacle/soldier-black.png') no-repeat;
-        animation: moveX 1s steps(6) infinite;
-        transform: scale(-2, 2);
-
-        position: absolute;
-        bottom:15%;
-        right:20%;
-    }
-
-    @keyframes moveX{
-      from{background-position-x:0px;}
-      to{background-position-x:-288px;}
-    }
 }
+
+@import 'spectacles/army';
+@import 'spectacles/celestial';

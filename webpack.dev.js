@@ -11,17 +11,20 @@ module.exports = {
   // see https://github.com/webpack-contrib/mini-css-extract-plugin/issues/29
   devtool: 'cheap-module-source-map',
   entry: [
-    path.resolve(__dirname, 'src/assets/scripts/index.js'),
-    path.resolve(__dirname, 'src/assets/styles/index.scss')
+    path.resolve(__dirname, 'src/assets/scripts/index.ts'),
+    path.resolve(__dirname, 'src/assets/styles/index.scss'),
   ],
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist/assets'),
-    publicPath: '/assets/'
+    publicPath: '/assets/',
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: '[name].css',
     }),
     // Will create a `webpack.njk` with the css/jss files
     // that then gets picked up by eleventy
@@ -31,15 +34,20 @@ module.exports = {
       // Hash is used for cache busting the generated webpack.html
       // while keeping the same file name in the output
       hash: true,
-      inject: false
-    })
+      inject: false,
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.s?css/i,
@@ -49,18 +57,18 @@ module.exports = {
             loader: 'css-loader',
             // Does not respect devtools option
             // https://github.com/webpack-contrib/css-loader/issues/622
-            options: { sourceMap: true }
+            options: { sourceMap: true },
           },
           {
             loader: 'postcss-loader',
             options: {
               plugins: () => [PostCSSPresetEnv],
               // Does not respect devtools option
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
@@ -69,11 +77,11 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[contenthash].[ext]',
-              outputPath: 'images'
-            }
-          }
-        ]
-      }
-    ]
-  }
+              outputPath: 'images',
+            },
+          },
+        ],
+      },
+    ],
+  },
 };

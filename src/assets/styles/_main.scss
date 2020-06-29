@@ -33,9 +33,12 @@
         @for $i from 11 through 1 {
             .element--layer_#{$i} {
                 background: url('/assets/images/spectacle/parallax/layer_#{$i}.png');
-                
-                @media (max-width:576px) {
+                @media (max-width:768px) {
                     background-position-x: 48%;
+
+                    @media (min-width:576.1px) {
+                        background-position-y: bottom;
+                    }
                 }
             }   
         }
@@ -46,12 +49,28 @@
 
         padding:10px;
         position:absolute;
-        top:50%;
+        top:calc(50% + 3.5rem);
         left:50%;
         transform: translate(-50%, -50%);
         
-        @media (max-width:576px) {
+        @media (max-width:768px) {
             width:95vw;
+        }
+
+        a.button {
+            display:block;
+            padding:30px;
+            background-color:hsl(6, 100%, 67%);
+            width:fit-content;
+            margin: 0 auto;
+            margin-top: 7rem;
+            box-shadow: 3px 3px 0 hsl(6, 100%, 60%);
+
+            font-family: 'Lato', sans-serif;
+            font-size:24px;
+            font-weight: 600;
+            color:white;
+            text-transform: uppercase;
         }
 
         h1 {
@@ -62,22 +81,9 @@
             white-space: nowrap;
             text-align: center;
 
-            @media (max-width:576px) {
+            @media (max-width:768px) {
                 font-size:64px;
                 white-space: normal;
-            }
-        }
-
-        h2 {
-            background-color:rgba(255,255,255,.90);
-            color:rgb(36, 36, 36);
-            padding:5px;
-            font-family: 'Roboto', sans-serif;
-            font-size:40px;
-            text-align: center;
-
-            @media (max-width:576px) {
-                font-size:18px;
             }
         }
 
@@ -87,8 +93,11 @@
             padding:20px;
 
             background-color:rgba(255,255,255,.90);
+            border-radius: 10px;
 
-            @media (max-width:576px) {
+            filter:grayscale(.9);
+
+            @media (max-width:768px) {
                 flex-wrap: wrap;
             }
 
@@ -98,7 +107,7 @@
                 width:calc(20% - 10px);
                 max-width:20%;
 
-                @media (max-width:576px) {
+                @media (max-width:768px) {
                     width:calc(16.667% - 10px);
                     max-width:16.667%;
                 }

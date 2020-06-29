@@ -68,18 +68,13 @@ export default class CelestialScenario implements Scenario {
             delay: 7000,
             duration: 4000
         });
-        
-        // document.getElementsByTagName('body')[0].style.overflow = 'hidden'
-        // document.getElementsByTagName('html')[0].style.overflow = 'hidden'
 
         setTimeout(() => {
             document.getElementsByClassName('element--stars')[0].remove();
 
             const parallaxInstance = new Parallax(this.spectacle.domElement);
             parallaxInstance.friction(0.1, 0.1);
-            document.getElementsByTagName('body')[0].style.overflow = 'visible'
-            document.getElementsByTagName('html')[0].style.overflow = 'visible'
-        }, 11000);
+        }, 8000);
     }
 
     hide(): void {

@@ -72,9 +72,9 @@
             background-color:rgba(255,255,255,.90);
             color:rgb(36, 36, 36);
             padding:5px;
-            font-size:48px;
+            font-family: 'Roboto', sans-serif;
+            font-size:40px;
             text-align: center;
-            border-bottom:rgb(231, 150, 0) 6px solid;
 
             @media (max-width:576px) {
                 font-size:18px;
@@ -85,10 +85,8 @@
             display:flex;
             align-items: center;
             padding:20px;
-            margin-top:.5rem;
 
             background-color:rgba(255,255,255,.90);
-            border-top:rgb(231,150,0) 6px solid;
 
             @media (max-width:576px) {
                 flex-wrap: wrap;

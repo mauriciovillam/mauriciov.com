@@ -104,7 +104,7 @@
 
             .grid__item {
                 display: flex;
-                flex-basis:20%;
+                flex-basis:auto;
                 padding:5px;
 
                 @media (max-width:768px) {
@@ -114,6 +114,7 @@
                 img {
                     width:100%;
                     height: auto;
+                    max-width:150px;
                 }
             }
         }

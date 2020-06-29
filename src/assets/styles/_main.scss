@@ -90,6 +90,7 @@
         .grid {
             display:flex;
             align-items: center;
+            justify-content: center;
             padding:20px;
 
             background-color:rgba(255,255,255,.90);
@@ -102,14 +103,12 @@
             }
 
             .grid__item {
-                display: inline-flex;
+                display: flex;
+                flex-basis:20%;
                 padding:5px;
-                width:calc(20% - 10px);
-                max-width:20%;
 
                 @media (max-width:768px) {
-                    width:calc(16.667% - 10px);
-                    max-width:16.667%;
+                    flex-basis:16.667%;
                 }
 
                 img {
